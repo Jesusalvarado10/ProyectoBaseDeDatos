@@ -1,0 +1,11 @@
+img{
+height: 25rem;
+    margin: 0 auto;
+position: relative;
+    top: 2.5rem;
+    right: 11.2rem;
+    z-index: 2; /* Establece un z-index más alto */
+}
+#card{
+    z-index: 1;
+}
