@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../Context/contex";
+
 import './login.css'
 export function Login() {
 
-    const { login } = useAuth();
+
       // const navigate = useNavigate();
       // const [isLoading, setIsLoading] = useState(true); // Estado de carga inicialmente true
       // const [showAlert, setShowAlert] = useState(false);
