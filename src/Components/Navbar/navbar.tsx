@@ -11,6 +11,7 @@ import { homeURL, loginURL } from "../../Constant/url";
 export function NavBar() {
     const navigate = useNavigate();
     const { user } = useAuth()
+    console.log(user  )
     
   
     const handleLogout = async () => {
