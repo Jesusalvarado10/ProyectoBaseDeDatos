@@ -1,12 +1,14 @@
 import React, { createContext, useContext, useState } from 'react';
-import User from '../Class/User';
+import user from '../Class/User';
+
+
 
 
 interface AuthContextType {
 
 
-  user: User | null; // Añadimos la información del usuario
-  login: (user: User ) => void; // Pasamos la información del usuario al iniciar sesión
+  user: user | null; // Añadimos la información del usuario
+  login: (user: user ) => void; // Pasamos la información del usuario al iniciar sesión
   logout: () => void;
 }
 
@@ -26,15 +28,15 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   
-  const [user, setUser] = useState<User | null>(null); // Inicialmente no hay usuario
+  const [user, setUser] = useState<user | null>(null); // Inicialmente no hay usuario
    // Inicialmente no hay usuario
 
-  const login = (loggedInUser: User) => {
+  const login = (loggedInUser: user) => {
     // Aquí realizarías la lógica de autenticación, como enviar credenciales al servidor
     // y actualizar isAuthenticated basado en la respuesta
     console.log("Usuario logeado")
     
-    setUser(loggedInUser as User); // Actualizamos la información del usuario al iniciar sesión
+    setUser(loggedInUser as user); // Actualizamos la información del usuario al iniciar sesión
     
   };
 
