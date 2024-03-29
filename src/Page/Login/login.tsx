@@ -5,12 +5,12 @@ import './login.css'
 export function Login() {
 
     const { login } = useAuth();
-      const navigate = useNavigate();
-      const [isLoading, setIsLoading] = useState(true); // Estado de carga inicialmente true
-      const [showAlert, setShowAlert] = useState(false);
-      const [error, setError] = useState('');
-      const [email, setEmail] = useState('');
-      const [password, setPassword] = useState('');
+      // const navigate = useNavigate();
+      // const [isLoading, setIsLoading] = useState(true); // Estado de carga inicialmente true
+      // const [showAlert, setShowAlert] = useState(false);
+      // const [error, setError] = useState('');
+      // const [email, setEmail] = useState('');
+      // const [password, setPassword] = useState('');
     
     return(
 
@@ -36,7 +36,7 @@ export function Login() {
           </label>
           <input type="password" placeholder="password" className="input input-bordered" required />
           <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+            <a href="#" className="label-text-alt link link-hover">No tienes cuenta?</a>
           </label>
         </div>
         <div className="form-control mt-6">
