@@ -8,9 +8,11 @@ import { Home } from './Page/Home/Home.tsx'
 import { Layout } from './Components/Layout/layout.tsx'
 import { Login } from './Page/Login/login.tsx'
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-<BrowserRouter>
+
+  <BrowserRouter>
         <Routes >
         <Route element = {<Layout />}>
         <Route path = {homeURL}element = {<Home />}></Route> 
@@ -20,5 +22,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </Route>
     </Routes>
     </BrowserRouter>
+
   </React.StrictMode>,
 )

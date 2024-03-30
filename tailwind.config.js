@@ -1,4 +1,4 @@
-
+const {nextui} = require("@nextui-org/react");
 
 export default {
   content: [
@@ -9,11 +9,12 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  darkMode: "class",
+  plugins: [require("daisyui"),nextui()],
   daisyui: {
     themes: ["light", "dark", "cupcake"],
   },
-  darkMode: "class",
+
 }
 
 
