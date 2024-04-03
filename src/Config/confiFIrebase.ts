@@ -50,6 +50,7 @@ export async function signInWithEmailAndPasswordAndFetchUserData(email: string, 
       if (userDocSnap.exists()) {
 
         const userData = userDocSnap.data();
+        console.log(userData)
     
             const user = new User( email, password);
             user.setId( userId)

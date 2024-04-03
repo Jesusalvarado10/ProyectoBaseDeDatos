@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+
 import neo4j, { Driver, Session, Record } from 'neo4j-driver';
 
 
