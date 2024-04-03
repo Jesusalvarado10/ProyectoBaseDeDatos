@@ -53,7 +53,7 @@ export async function fetchLatestAnimesByGenre(genre: string) {
     // Construir la consulta GraphQL para obtener los mejores animes sin un género específico
     const query = `
       query {
-        Page(page: 1, perPage: 10) {
+        Page(page: 1, perPage: 20) {
           media(type: ANIME, sort: SCORE_DESC) {
             id
             title {
