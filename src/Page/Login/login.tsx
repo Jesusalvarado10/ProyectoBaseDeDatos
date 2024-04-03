@@ -36,6 +36,7 @@ const result= await signInWithEmailAndPasswordAndFetchUserData(email,password)
   const user = result;
 if(user){
   const id2= await getNodeUser(user.getId());
+  console.log(id2);
    if (id2 !== null) {
      user.setid2(id2)
    }

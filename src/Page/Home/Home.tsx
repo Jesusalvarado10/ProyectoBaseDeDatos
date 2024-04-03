@@ -16,30 +16,23 @@ export function Home() {
     const {user}=useAuth();
     useEffect(() => {
         const fetchData = async () => {
-            
             const topAnimes = await fetchTopAnimes();
             setAnimes(topAnimes);
-        };
-        fetchData();
-    }, []); // Empty dependency array ensures useEffect runs only once after the component mounts
-    useEffect(() => {
-        const fetchData = async () => {
-            // Obtener los géneros que le gustan al usuario
-            const userLikedGenres = await getLikedGenres(user?.id2);
-            console.log(userLikedGenres);
-            
-            // Si el usuario tiene géneros que le gustan, obtener los animes recomendados
-            if (userLikedGenres.length > 0) {
-                const topAnimesPromises = userLikedGenres.map((genre: string) => fetchLatestAnimesByGenre(genre));
-                const topAnimes = await Promise.all(topAnimesPromises);
-                const flattenedAnimes = topAnimes.flat(); // Aplanar el array de arrays
-                setRecommendedAnimes(flattenedAnimes);
-                console.log(flattenedAnimes)
+            if (user?.getid2()) {
+                const userLikedGenres = await getLikedGenres(user?.id2);
+                if (userLikedGenres.length > 0) {
+                    console.log("llegar");
+                    const topAnimesPromises = userLikedGenres.map((genre: string) => fetchLatestAnimesByGenre(genre));
+                    const topAnimes = await Promise.all(topAnimesPromises);
+                    const flattenedAnimes = topAnimes.flat(); // Aplanar el array de arrays
+                    setRecommendedAnimes(flattenedAnimes);
+                }
             }
         };
-
         fetchData();
-    }, [user?.id2]); // Dependencia user?.id2 para que se ejecute el efecto cuando cambie el ID del usuario
+    }, []);
+     // Empty dependency array ensures useEffect runs only once after the component mounts
+     // Dependencia user?.id2 para que se ejecute el efecto cuando cambie el ID del usuario
 
     return (
         <div className="bg-base-100 max-h-screen ">

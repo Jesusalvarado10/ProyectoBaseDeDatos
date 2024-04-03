@@ -87,7 +87,7 @@ export async function getNodeUser( id: string): Promise<Record | null> {
       // Comprueba si hay registros devueltos
       if (result.records.length > 0) {
           // Devuelve el primer registro (ya que solo debería haber uno)
-          const id = result.records[0].get('u').toString()
+          const id = result.records[0].get('u').identity
           return id;
       } else {
           // Si no se devolvió ningún registro, devuelve null
