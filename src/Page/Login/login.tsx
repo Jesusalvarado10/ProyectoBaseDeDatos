@@ -55,7 +55,7 @@ navigate('/')
 
         <div className="hero min-h-screen bg-base-200">
            
-    <img src="https://sso-v2.crunchyroll.com/assets/images/log-in-hime.png"/>
+
   <div id="card"className="hero-content flex-col ">
     <div className="text-center mb-10">
       <h1 className="text-5xl font-bold">Registro</h1>

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { Anime, AnimeList } from "../../Config/api2";
 import { fetchLatestAnimesByGenre, fetchTopAnimes } from "../../Config/api";
-import { Card, CardHeader, Divider, CardBody, CardFooter, Button, Slider } from "@nextui-org/react";
-import { Link } from "react-router-dom";
+
 import { getLikedGenres } from "../../Config/confi2";
 import { useAuth } from "../../Context/contex";
 
@@ -12,7 +11,7 @@ import { useAuth } from "../../Context/contex";
 
 export function Home() {
     const [animes, setAnimes] = useState<Anime[]>([]);
-    const [likedGenres, setLikedGenres] = useState<string[]>([]);
+
     const [recommendedAnimes, setRecommendedAnimes] = useState<Anime[]>([]);
     const {user}=useAuth();
     useEffect(() => {

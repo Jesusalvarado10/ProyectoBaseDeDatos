@@ -1,8 +1,9 @@
-import { Card, CardBody, Image } from '@nextui-org/react';
+
 import './api.css';
-import { useState } from 'react';
+
 import { AnimeCard } from './api3';
 export interface Anime {
+
     imageUrl: string | undefined;
     id: number;
     title: {
