@@ -1,12 +1,19 @@
 import { Card, CardBody } from "@nextui-org/react";
 import { useState } from "react";
 import { Anime } from "./api2";
+import { addNoderAnime } from "./confi2";
+import { useAuth } from "../Context/contex";
 
 export function AnimeCard({ anime }: { anime: Anime }) {
     const [liked, setLiked] = useState<boolean>(false);
-  
+  const {user}= useAuth()
     const toggleLike = () => {
       setLiked(!liked);
+      console.log(user)
+      if (user ) {
+        console.log(user.getid2())
+      addNoderAnime(anime.title.romaji, anime.genres[0], user.getid2())
+    }
     };
   
     return (
@@ -25,7 +32,7 @@ export function AnimeCard({ anime }: { anime: Anime }) {
                     {anime.title.romaji}
                   </h1>
                   <p className="text-small text-foreground/80">
-                    Géneros: {anime.genres.join(", ")}
+                    Géneros: {anime.genres[0]}
                   </p>
                   <p className="text-small text-foreground/80">
                     Puntuación promedio: {anime.averageScore}
