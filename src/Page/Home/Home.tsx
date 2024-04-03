@@ -19,9 +19,10 @@ export function Home() {
             const topAnimes = await fetchTopAnimes();
             setAnimes(topAnimes);
             if (user?.getid2()) {
+                console.log("llegar");
                 const userLikedGenres = await getLikedGenres(user?.id2);
                 if (userLikedGenres.length > 0) {
-                    console.log("llegar");
+          
                     const topAnimesPromises = userLikedGenres.map((genre: string) => fetchLatestAnimesByGenre(genre));
                     const topAnimes = await Promise.all(topAnimesPromises);
                     const flattenedAnimes = topAnimes.flat(); // Aplanar el array de arrays
@@ -39,7 +40,11 @@ export function Home() {
       
         <AnimeList animes={animes} />
 
-        {recommendedAnimes.length > 0 && <AnimeList animes={recommendedAnimes}key={100} />}
+        {recommendedAnimes.length > 0 && (
+    <div className="bg-base-100"><h1 className="text-center text-2xl">Recomendaciones</h1>
+        <AnimeList animes={recommendedAnimes} key={100} />
+    </div>
+)}
     </div>
     );
 }
